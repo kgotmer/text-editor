@@ -105,7 +105,7 @@ def about():
 def quit():
     window.destroy()
 
-
+# creating/editing window
 window = Tk()
 window.title("Text Editor Program")
 file = None
@@ -119,15 +119,19 @@ y = int((screen_height / 2.2) - (window_height / 2))
 
 window.geometry("{}x{}+{}+{}".format(window_width, window_height, x, y))
 
+
+# starting font and font size
 font_name = StringVar(window)
 font_name.set('Arial')
 
 font_size = StringVar(window)
 font_size.set('12')
 
+# bullet points feature
 text_area = Text(window, font=(font_name.get(), font_size.get()))
 text_area.bind("<Control-8>", printBullet)
 
+# scrollbar 
 scroll_bar = Scrollbar(text_area)
 window.grid_rowconfigure(0, weight=1)
 window.grid_columnconfigure(0, weight=1)
@@ -136,18 +140,24 @@ text_area.grid(sticky=N + E + S + W)
 frame = Frame(window)
 frame.grid()
 
+
+# changing text color
 color_button = Button(frame, text='Color', command=change_color)
 color_button.grid(row=0, column=0)
 
+# highlighter
 highlight_button = Button(frame, text='Highlight', command=change_highlight_color)
 highlight_button.grid(row=0, column=1)
 
+# underline
 underline_button = Button(frame, text='Underline', command=underline)
 underline_button.grid(row=0, column=2)
 
+# bold
 bold_button = Button(frame, text='Bold', command=bold)
 bold_button.grid(row=0, column=3)
 
+# background color
 bg_color_button = Button(frame, text='Background Color', command=change_bg_color)
 bg_color_button.grid(row=0, column=4)
 
