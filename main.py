@@ -4,6 +4,7 @@ from tkinter import filedialog, colorchooser, font
 from tkinter.messagebox import *
 from tkinter.filedialog import *
 import time
+import autocorrect
 
 
 def change_color():
@@ -201,6 +202,8 @@ help_menu.add_command(label='About', command=about)
 window.bind("<Control-s>", save_file)
 window.bind("<Control-o>", open_file)
 window.bind("<Control-n>", new_file)
+
+
 
 
 window.mainloop()
